@@ -1,17 +1,21 @@
-let btn = document.querySelector('.fa-eye')
+function mostrarSenha(){
+  var inputPass = document.getElementById('password')
+  var btnShowPass = document.getElementById('btn-senha')
 
-btn.addEventListener('click', ()=>{
-  let inputSenha = document.querySelector('#password')
-  
-  if(inputSenha.getAttribute('type') == 'password'){
-    inputSenha.setAttribute('type', 'text')
+  if(inputPass.type === 'password'){
+    inputPass.setAttribute('type', 'text')
+    btnShowPass.classList.replace('bi-eye-fill', 'bi-eye-slash-fill')
   } else {
-    inputSenha.setAttribute('type', 'password')
-    let btn = document.querySelector('.fa-sharp fa-solid fa-eye-slash')
+        inputPass.setAttribute('type', 'password')
+    btnShowPass.classList.replace( 'bi-eye-slash-fill','bi-eye-fill')
   }
-})
+}
+
+/* =====================================================*/
   
-  const userLogado = JSON.parse(localStorage.getItem("userLogado"));
+
+/* O trecho abaixo precisa ser verificado */
+ /* const userLogado = JSON.parse(localStorage.getItem("userLogado"));
   
   const logado = document.querySelector("#logado");
   logado.innerHTML = `Olá ${userLogado.nome}`;
@@ -19,6 +23,4 @@ btn.addEventListener('click', ()=>{
   function sair() {
     localStorage.removeItem("token");
     localStorage.removeItem("userLogado");
-  }
-
-  
+  }*/
